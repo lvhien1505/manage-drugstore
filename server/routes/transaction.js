@@ -7,7 +7,7 @@ const {checkAuth,checkAdmin} =require("../middlewares/auth");
 
 
 //POST GET LIST BUYER
-router.post("/",checkSignup,asyncHandler(getListTransaction))
+router.post("/",checkAuth,checkAdmin,asyncHandler(getListTransaction))
 
 //POST CREATE BUYER
 router.post("/create",checkAuth,checkAdmin, asyncHandler(create))

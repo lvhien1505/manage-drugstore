@@ -99,6 +99,21 @@ const DELETE_PRODUCT_SUCCESS = {
     message: 'Product is deleted !'
 }
 
+const CREATE_CATEGORY_SUCCESS = {
+    statusCode: 200,
+    message: 'Category is created !'
+}
+const UPDATE_CATEGORY_SUCCESS = {
+    statusCode: 200,
+    message: 'Update category success !'
+}
+
+const DELETE_CATEGORY_SUCCESS = {
+    statusCode: 200,
+    message: 'Category is deleted !'
+}
+
+
 const UPLOAD_FAILED = {
     statusCode: 500,
     message: 'Upload failed !'
@@ -131,6 +146,9 @@ module.exports={
     CREATE_PRODUCT_SUCCESS,
     UPDATE_PRODUCT_SUCCESS,
     DELETE_PRODUCT_SUCCESS,
+    CREATE_CATEGORY_SUCCESS,
+    UPDATE_CATEGORY_SUCCESS,
+    DELETE_CATEGORY_SUCCESS,
     UPLOAD_FAILED,
     NO_FILE_SELECT
 }

@@ -5,12 +5,16 @@ let productSchema = mongoose.Schema({
         type:String,
         required:true
     },
+    category:{
+        type:String,
+        ref:"categories"
+    },
     image:{
         type:String,
     },
     partner:{
         type:String,
-        required:true
+        ref:"partner"
     },
     moneyIn:{
         type:Number,
@@ -25,6 +29,10 @@ let productSchema = mongoose.Schema({
     profit:{
         type:String,
         required:true,
+        default:0
+    },
+    dateIn:{
+        type:String
     }
 },{
     timestamps: true,

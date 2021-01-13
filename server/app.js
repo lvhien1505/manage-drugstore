@@ -8,7 +8,8 @@ const  path =require("path")
 
 //routes
 const indexRoute = require("./routes/index") 
-const partnerRoute = require("./routes/partner"); 
+const partnerRoute = require("./routes/partner");
+const categoryRoute = require("./routes/category"); 
 const buyerRoute = require("./routes/buyer");
 const productRoute = require("./routes/product");
 const transactionRoute = require("./routes/transaction");
@@ -36,6 +37,7 @@ app.use("/public", express.static(path.join(__dirname + "/public")));
 //routers
 app.use("/",indexRoute);
 app.use("/partner",partnerRoute);
+app.use("/category",categoryRoute)
 app.use("/buyer",buyerRoute);
 app.use("/product",productRoute);
 app.use("/transaction",transactionRoute);

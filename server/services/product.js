@@ -11,8 +11,8 @@ const {
 
 const getListProducts = async (req, res) => {
   try {
-    let listTransaction = await ProductModel.find().populate("products");
-    res.status(200).json(listTransaction);
+    let listProducts = await ProductModel.find().populate("products category");
+    res.status(200).json(listProducts);
   } catch (error) {
     res.status(500).json(ERROR_SERVER);
   }
@@ -21,6 +21,7 @@ const getListProducts = async (req, res) => {
 const create = async (req, res) => {
   try {
     let name = req.body.name || "";
+    let category = req.body.category || "";
     let partner = req.body.partner || "";
     let moneyIn = req.body.moneyIn || "";
     let moneyOut = req.body.moneyOut || "";
@@ -28,6 +29,7 @@ const create = async (req, res) => {
 
     let product = {
       name,
+      category,
       partner,
       moneyIn,
       moneyOut,
@@ -53,6 +55,9 @@ const update = async (req, res) => {
     let product = {};
     if (req.body.name) {
       product.name = req.body.name;
+    }
+    if (req.body.category) {
+      product.category = req.body.category;
     }
     if (req.body.partner) {
       product.partner = req.body.partner;

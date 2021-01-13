@@ -55,7 +55,7 @@ const Home = ({history}) => {
         <Col>
           <Form
             {...layout}
-            name="basic"
+            name="login"
             initialValues={{ remember: true }}
             onFinish={handleLogin}
           >
@@ -63,7 +63,7 @@ const Home = ({history}) => {
               name="username"
               rules={[{ required: true, message: "Vui lòng nhập tài khoản!" }]}
             >
-              <Input style={{ width: "250px" }} prefix={<UserOutlined />} />
+              <Input style={{ width: "250px" }} prefix={<UserOutlined />} placeholder="Nhập tài khoản"/>
             </Form.Item>
             <Form.Item
               name="password"
@@ -72,6 +72,7 @@ const Home = ({history}) => {
               <Input.Password
                 style={{ width: "250px" }}
                 prefix={<LockOutlined />}
+                placeholder="Nhập mật khẩu"
               />
             </Form.Item>
             <Form.Item {...tailLayout} name="remember" valuePropName="checked">

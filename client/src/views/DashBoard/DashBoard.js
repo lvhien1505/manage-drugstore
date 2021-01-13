@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
+
+import BaseLayout from '../../components/Layout/BaseLayout'
 import { checkAuth } from "../../api/login";
 
-const DashBoard = ({ history }) => {
+const DashBoard = ({ history,match }) => {
   const _checkAuth = async () => {
     try {
       let res = await checkAuth();
       if (res) {
         if (res.data.role !== "admin") {
-          history.push("/");
+         return history.push("/");
         }
       }
     } catch (error) {
@@ -19,11 +21,11 @@ const DashBoard = ({ history }) => {
 
   useEffect(() => {
     _checkAuth();
-  }, []);
+  }, [match]);
   
-  return <div>
+  return <BaseLayout>
       <p>oke</p>
-  </div>;
+  </BaseLayout>;
 };
 
 export default DashBoard;
